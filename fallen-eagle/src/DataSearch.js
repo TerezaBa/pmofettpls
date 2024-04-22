@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CurrentWeather from "./CurrentWeather";
 import Forecast from "./Forecast";
@@ -9,8 +9,11 @@ export default function DataSearch(props) {
   const [query, setQuery] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ searched: false });
 
+  useEffect(() => {
+    search(query);
+  }, []);
+
   function displayTemp(response) {
-    console.log(response);
     setWeatherData({
       searched: true,
       date: response.data.time,
@@ -27,11 +30,12 @@ export default function DataSearch(props) {
     });
   }
 
-  function search() {
+  async function search() {
     const apiKey = "b36tedd42903o5c6c68a4a10b4b1953f";
     const units = "metric";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(displayTemp);
+    const response = await axios.get(apiUrl);
+    displayTemp(response);
   }
 
   function handleSubmit(event) {
@@ -70,11 +74,11 @@ export default function DataSearch(props) {
       <div className="DataSearch">
         <div>{form}</div>
         <CurrentWeather weatherInfo={weatherData} />
-        <Forecast coords={weatherData.coords} />
+        <Forecast coords={weatherData.coords} icon={weatherData.icon} />
       </div>
     );
   } else {
-    search(query);
+    // search(query);
     return <div>Loading...</div>;
   }
 }

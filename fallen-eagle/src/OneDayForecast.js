@@ -13,6 +13,10 @@ export default function OneDayForecast(props) {
             <h5 className="card-title">
               <FormatForecastDate time={props.forecastData.time} />
             </h5>
+            <img
+              src={props.forecastData.condition.icon_url}
+              alt={props.forecastData.condition.icon}
+            ></img>
             {/* <WeatherIcon
               iconInfo={props.forecastData.condition.icon}
               alt={props.forecastData.condition.description}
