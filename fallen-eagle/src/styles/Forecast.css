@@ -1,0 +1,73 @@
+.Forecast .card {
+  border-color: #fff;
+}
+.Forecast .card-body {
+  padding: 16px 10px;
+  text-align: center;
+}
+
+.Forecast .card-title,
+.forecast-temp-min,
+.forecast-temp-max {
+  font-size: 15px;
+}
+
+.Forecast .card-title {
+  margin-bottom: 20px;
+}
+
+.Forecast .forecast-temps {
+  margin-top: 10px;
+}
+
+.Forecast .forecast-temp-min,
+.card-title {
+  opacity: var(--opacity-primary);
+}
+
+.Forecast .forecast-temp-max {
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .Forecast .card-body {
+    padding: 0;
+    text-align: center;
+  }
+
+  .Forecast .forecast-temp-min,
+  .forecast-temp-max {
+    font-size: 8px;
+  }
+
+  .Forecast .card-title {
+    font-size: 6px;
+  }
+
+  .Forecast .forecast-temp-min,
+  .forecast-temp-max {
+    font-size: 9px;
+  }
+
+  .Forecast canvas {
+    width: 12px;
+    height: 12px;
+  }
+
+  .Forecast .card-title {
+    margin-bottom: 5px;
+  }
+
+  .Forecast .forecast-temps {
+    margin-top: 0;
+  }
+
+  .Forecast .forecast-temp-min,
+  .card-title {
+    opacity: var(--opacity-primary);
+  }
+
+  .Forecast .forecast-temp-max {
+    font-weight: 500;
+  }
+}

@@ -1,23 +1,32 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React, { useState } from "react";
+import DataSearch from "./DataSearch";
+import { UnitSwitchContext } from "./UnitSwitchContext";
 
-function App() {
+import "./styles/App.css";
+
+export default function App() {
+  const [unit, setUnit] = useState("metric");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>OMG HALO</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="App">
+        <UnitSwitchContext.Provider value={{ unit, setUnit }}>
+          <DataSearch defaultCity="Prague" />
+        </UnitSwitchContext.Provider>
+      </div>
+      <footer>
+        <small>
+          <a
+            href="https://github.com/TerezaBa/weather-app-react"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {" "}
+            Open-source code
+          </a>
+          , by TerezaBa
+        </small>
+      </footer>
     </div>
   );
 }
-
-export default App;

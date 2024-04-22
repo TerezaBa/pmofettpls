@@ -1,0 +1,55 @@
+.DataSearch h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+}
+
+.DataSearch h4 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+  opacity: var(--opacity-secondary);
+}
+
+.DataSearch ul {
+  font-size: 12px;
+  font-weight: 500;
+  list-style: none;
+  padding: 10px 0;
+}
+
+.DataSearch .info-text {
+  opacity: var(--opacity-secondary);
+}
+
+.DataSearch .btn {
+  padding: 0.375rem 2.75rem;
+}
+
+@media (max-width: 768px) {
+  .DataSearch h1 {
+    font-size: 24px;
+  }
+
+  .DataSearch h4 {
+    font-size: 12px;
+  }
+
+  .DataSearch ul {
+    font-size: 10px;
+  }
+
+  .DataSearch .btn {
+    padding: 0.375rem 0.4rem;
+    margin-left: 3px;
+  }
+
+  .DataSearch .col-3,
+  .col-9 {
+    padding: 0;
+  }
+
+  .DataSearch input {
+    line-height: 1.2;
+  }
+}

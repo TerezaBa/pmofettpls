@@ -1,0 +1,43 @@
+.CurrentWeather .temp {
+  font-size: 64px;
+  font-weight: 600;
+  margin-left: 60px;
+  text-align: center;
+}
+
+.CurrentWeather .units {
+  font-size: 18px;
+  position: relative;
+  right: -12px;
+  top: -33px;
+}
+
+.CurrentWeather canvas {
+  position: relative;
+  right: -38px;
+  top: 5px;
+}
+
+@media (max-width: 768px) {
+  .CurrentWeather .temp {
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 0px;
+    text-align: center;
+  }
+
+  .CurrentWeather .units {
+    font-size: 15px;
+    position: relative;
+    right: -4px;
+    top: -6px;
+  }
+
+  .CurrentWeather canvas {
+    position: relative;
+    right: 15px;
+    top: 7px;
+    width: 30px;
+    height: 30px;
+  }
+}

@@ -1,0 +1,9 @@
+.Temperature a {
+  color: black;
+  opacity: var(--opacity-primary);
+  text-decoration: none;
+}
+
+.Temperature a:hover {
+  text-decoration: none;
+}
