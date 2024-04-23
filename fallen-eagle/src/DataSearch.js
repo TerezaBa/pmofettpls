@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import CurrentWeather from "./CurrentWeather";
+import CurrentWeather from "./CurrentWeather";
 // import Forecast from "./Forecast";
 
 import "./styles/DataSearch.css";
@@ -69,28 +69,7 @@ export default function DataSearch(props) {
   return (
     <div className="DataSearch">
       <div>{form}</div>
-      <div className="row CurrentWeather">
-        <div className="col-6">
-          <h1>{weatherData.city}</h1>
-          <h6>{weatherData.date}</h6>
-        </div>
-        <div className="col-6 align-self-center">
-          {/* <Temperature
-              metric={props.weatherInfo.temp}
-              icon={props.weatherInfo.icon}
-            /> */}
-          <h4 className="text-capitalize">{weatherData.desc}</h4>
-          <ul>
-            <li>
-              <span className="info-text">Humidity:</span> {weatherData.hum}%
-            </li>
-            <li>
-              <span className="info-text">Wind:</span> {weatherData.wind} m/s
-            </li>
-          </ul>
-        </div>
-      </div>
-      {/* <CurrentWeather weatherInfo={weatherData} /> */}
+      <CurrentWeather weatherInfo={weatherData} />
       {/* <Forecast coords={weatherData.coords} icon={weatherData.icon} /> */}
     </div>
   );

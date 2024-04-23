@@ -9,43 +9,22 @@ export default function CurrentWeather(props) {
   const [currentTime, setCurrentTime] = useState(null);
 
   useEffect(() => {
-    // setSearched(false);
-    setCurrentTime(null);
-    async function search() {
+    async function fetchDate() {
       let lat = props.weatherInfo.coords.latitude;
       let lon = props.weatherInfo.coords.longitude;
       let apiKey = "OA2X7WH81GI9";
       let apiUrl = `https://api.timezonedb.com/v2.1/get-time-zone?key=${apiKey}&format=json&by=position&lat=${lat}&lng=${lon}`;
       const response = await axios.get(apiUrl);
-      showTime(response);
+      setCurrentTime(response.data.formatted);
     }
-    search();
+    fetchDate();
   }, [props.weatherInfo.coords]);
-
-  function showTime(response) {
-    let localTime = response.data.formatted;
-    setCurrentTime(localTime);
-    // setSearched(true);
-  }
-
-  async function search() {
-    let lat = props.weatherInfo.coords.latitude;
-    let lon = props.weatherInfo.coords.longitude;
-    let apiKey = "OA2X7WH81GI9";
-    let apiUrl = `https://api.timezonedb.com/v2.1/get-time-zone?key=${apiKey}&format=json&by=position&lat=${lat}&lng=${lon}`;
-    const response = await axios.get(apiUrl);
-    showTime(response);
-  }
 
   return (
     <div className="row CurrentWeather">
       <div className="col-6">
         <h1>{props.weatherInfo.city}</h1>
-        <h6>
-          {currentTime
-            ? moment(currentTime).format("ddd Do MMMM, hh:mm A")
-            : "Loading..."}
-        </h6>
+        <h6>{moment(currentTime).format("ddd Do MMMM, hh:mm A")}</h6>
         <h4 className="text-capitalize">{props.weatherInfo.desc}</h4>
       </div>
       <div className="col-6 align-self-center">
