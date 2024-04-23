@@ -65,16 +65,15 @@ export default function DataSearch(props) {
     </div>
   );
 
-  // if (weatherData.searched) {
-  return (
-    <div className="DataSearch">
-      <div>{form}</div>
-      <CurrentWeather weatherInfo={weatherData} />
-      {/* <Forecast coords={weatherData.coords} icon={weatherData.icon} /> */}
-    </div>
-  );
-  // } else {
-  //   // search(query);
-  //   return <div>Loading...</div>;
-  // }
+  if (weatherData.searched) {
+    return (
+      <div className="DataSearch">
+        <div>{form}</div>
+        <CurrentWeather weatherInfo={weatherData} />
+        {/* <Forecast coords={weatherData.coords} icon={weatherData.icon} /> */}
+      </div>
+    );
+  } else {
+    return <div>Loading...</div>;
+  }
 }
