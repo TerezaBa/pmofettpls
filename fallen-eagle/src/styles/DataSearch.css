@@ -11,26 +11,13 @@
   opacity: var(--opacity-secondary);
 }
 
-.DataSearch ul {
-  font-size: 12px;
-  font-weight: 500;
-  list-style: none;
-  padding: 10px 0;
-}
-
 .DataSearch .flex-container {
   display: flex;
   justify-content: space-between;
 }
 
-.DataSearch .flex-container .flex-item {
+.DataSearch .flex-item {
   flex: 1;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.DataSearch .info-text {
-  opacity: var(--opacity-secondary);
 }
 
 .DataSearch .btn {

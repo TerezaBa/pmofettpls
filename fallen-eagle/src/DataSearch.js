@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CurrentTime from "./CurrentTime";
-// import CurrentWeather from "./CurrentWeather";
+import Temperature from "./Temperature";
 // import Forecast from "./Forecast";
 
 import "./styles/DataSearch.css";
@@ -22,12 +22,14 @@ export default function DataSearch(props) {
       coords: response.data.coordinates,
       city: response.data.city,
       desc: response.data.condition.description,
-      temp: response.data.temperature.current,
-      hum: response.data.temperature.humidity,
-      wind: response.data.wind.speed,
-      icon: {
-        src: response.data.condition.icon_url,
-        alt: response.data.condition.icon,
+      weather_info: {
+        metric: response.data.temperature.current,
+        hum: response.data.temperature.humidity,
+        wind: response.data.wind.speed,
+        icon: {
+          src: response.data.condition.icon_url,
+          alt: response.data.condition.icon,
+        },
       },
     });
   };
@@ -73,14 +75,11 @@ export default function DataSearch(props) {
         <div className="flex-container">
           <div className="flex-item">
             <h1>{weatherData.city}</h1>
-            <CurrentTime
-              coords={weatherData.coords}
-              timestamp={weatherData.time}
-            />
+            <CurrentTime coords={weatherData.coords} />
+            <div className="text-capitalize">{weatherData.desc}</div>
           </div>
           <div className="flex-item">
-            {/* <CurrentWeather weatherInfo={weatherData} /> */}
-            {weatherData.temp}
+            <Temperature weather_info={weatherData.weather_info} />
           </div>
         </div>
         {/* <Forecast coords={weatherData.coords} icon={weatherData.icon} /> */}

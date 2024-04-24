@@ -1,3 +1,60 @@
+.Temperature {
+  display: flex;
+  align-items: end;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  align-content: space-bewteen;
+}
+
+.Temperature .item {
+  flex: 1;
+}
+
+/* .Temperature .item-1,
+.item-2,
+.item-3 {
+  flex-grow: 1;
+}
+
+ */
+
+.Temperature .item-4 {
+  align-self: flex-start;
+}
+
+.Temperature .icon img {
+  width: 90px;
+  height: 90px;
+}
+
+.Temperature .temp-figure {
+  font-size: 64px;
+  font-weight: 600;
+  /* margin-right: 5px; */
+  /* margin-top: 20px; */
+  text-align: center;
+}
+
+.Temperature .units {
+  font-size: 17px;
+  margin-top: 23px;
+  /* position: relative; */
+  /* right: -3px; */
+  /* top: -49px; */
+}
+
+.Temperature .info-text {
+  opacity: var(--opacity-secondary);
+}
+
+.Temperature ul {
+  font-size: 10px;
+  font-weight: 500;
+  list-style: none;
+  padding: 0;
+  margin-top: 24px;
+}
+
 .Temperature a {
   color: black;
   opacity: var(--opacity-primary);
@@ -6,4 +63,20 @@
 
 .Temperature a:hover {
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .Temperature .temp {
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 0px;
+    text-align: center;
+  }
+
+  .Temperature .units {
+    font-size: 15px;
+    position: relative;
+    right: -4px;
+    top: -6px;
+  }
 }
