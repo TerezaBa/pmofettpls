@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import CurrentWeather from "./CurrentWeather";
+import CurrentTime from "./CurrentTime";
+// import CurrentWeather from "./CurrentWeather";
 // import Forecast from "./Forecast";
 
 import "./styles/DataSearch.css";
@@ -17,7 +18,7 @@ export default function DataSearch(props) {
     const response = await axios.get(apiUrl);
     setWeatherData({
       searched: true,
-      date: response.data.time,
+      time: response.data.time,
       coords: response.data.coordinates,
       city: response.data.city,
       desc: response.data.condition.description,
@@ -69,7 +70,19 @@ export default function DataSearch(props) {
     return (
       <div className="DataSearch">
         <div>{form}</div>
-        <CurrentWeather weatherInfo={weatherData} />
+        <div className="flex-container">
+          <div className="flex-item">
+            <h1>{weatherData.city}</h1>
+            <CurrentTime
+              coords={weatherData.coords}
+              timestamp={weatherData.time}
+            />
+          </div>
+          <div className="flex-item">
+            {/* <CurrentWeather weatherInfo={weatherData} /> */}
+            {weatherData.temp}
+          </div>
+        </div>
         {/* <Forecast coords={weatherData.coords} icon={weatherData.icon} /> */}
       </div>
     );
