@@ -11,10 +11,9 @@ export default function Forecast(props) {
 
   const fetchForecast = async (coords) => {
     const { latitude, longitude } = coords;
-    let apiKey = "b36tedd42903o5c6c68a4a10b4b1953f";
+    const apiKey = "b36tedd42903o5c6c68a4a10b4b1953f";
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}`;
     const response = await axios.get(apiUrl);
-    console.log(response.data.daily[0]);
     setForecastData(response.data.daily);
   };
 

@@ -1,4 +1,4 @@
-export default function Metric(props) {
-  let celsTemp = Math.round(props.temp);
+export default function getMetricTemp(temp) {
+  let celsTemp = Math.round(temp);
   return celsTemp;
 }

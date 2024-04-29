@@ -1,7 +1,7 @@
 import React from "react";
-import Metric from "./Metric";
-import Imperial from "./Imperial";
-import FormatForecastDate from "./FormatForecastDate";
+import getMetricTemp from "./Metric";
+import getImperialTemp from "./Imperial";
+import formatDate from "./FormatForecastDate";
 
 import "./styles/Forecast.css";
 
@@ -12,7 +12,7 @@ export default function OneDayForecast(props) {
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">
-              <FormatForecastDate time={props.forecastData.time} />
+              {formatDate(props.forecastData.time)}
             </h5>
             <img
               className="forecast-icon"
@@ -22,11 +22,13 @@ export default function OneDayForecast(props) {
             ></img>
             <div className="forecast-temps">
               <span className="forecast-temp-max">
-                <Metric temp={props.forecastData.temperature.maximum} />°
+                {getMetricTemp(props.forecastData.temperature.maximum)}°
+                {/* <Metric temp={props.forecastData.temperature.maximum} />° */}
               </span>
               {"   "}
               <span className="forecast-temp-min">
-                <Metric temp={props.forecastData.temperature.minimum} />°
+                {getMetricTemp(props.forecastData.temperature.minimum)}°
+                {/* <Metric temp={props.forecastData.temperature.minimum} />° */}
               </span>
             </div>
           </div>
@@ -39,7 +41,7 @@ export default function OneDayForecast(props) {
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">
-              <FormatForecastDate time={props.forecastData.time} />
+              {formatDate(props.forecastData.time)}
             </h5>
             <img
               src={props.forecastData.condition.icon_url}
@@ -48,11 +50,13 @@ export default function OneDayForecast(props) {
             ></img>
             <div className="forecast-temps">
               <span className="forecast-temp-max">
-                <Imperial temp={props.forecastData.temperature.maximum} />°
+                {getImperialTemp(props.forecastData.temperature.maximum)}°
+                {/* <Imperial temp={props.forecastData.temperature.maximum} />° */}
               </span>
               {"   "}
               <span className="forecast-temp-min">
-                <Imperial temp={props.forecastData.temperature.minimum} />°
+                {getImperialTemp(props.forecastData.temperature.minimum)}°
+                {/* <Imperial temp={props.forecastData.temperature.minimum} />° */}
               </span>
             </div>
           </div>
