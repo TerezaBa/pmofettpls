@@ -13,7 +13,7 @@
 }
 
 .Forecast .card-title {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .Forecast .forecast-temps {
@@ -42,20 +42,12 @@
 
   .Forecast .card-title {
     font-size: 6px;
+    margin-bottom: 5px;
   }
 
   .Forecast .forecast-temp-min,
   .forecast-temp-max {
     font-size: 9px;
-  }
-
-  .Forecast canvas {
-    width: 12px;
-    height: 12px;
-  }
-
-  .Forecast .card-title {
-    margin-bottom: 5px;
   }
 
   .Forecast .forecast-temps {

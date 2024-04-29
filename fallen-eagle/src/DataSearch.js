@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CurrentTime from "./CurrentTime";
 import Temperature from "./Temperature";
-// import Forecast from "./Forecast";
+import Forecast from "./Forecast";
 
 import "./styles/DataSearch.css";
 
@@ -82,7 +82,7 @@ export default function DataSearch(props) {
             <Temperature weather_info={weatherData.weather_info} />
           </div>
         </div>
-        {/* <Forecast coords={weatherData.coords} icon={weatherData.icon} /> */}
+        <Forecast coords={weatherData.coords} icon={weatherData.icon} />
       </div>
     );
   } else {

@@ -38,6 +38,7 @@
 .Temperature .units {
   font-size: 17px;
   margin-top: 23px;
+  padding-left: 2px;
   /* position: relative; */
   /* right: -3px; */
   /* top: -49px; */

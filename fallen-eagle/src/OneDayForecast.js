@@ -3,6 +3,8 @@ import Metric from "./Metric";
 import Imperial from "./Imperial";
 import FormatForecastDate from "./FormatForecastDate";
 
+import "./styles/Forecast.css";
+
 export default function OneDayForecast(props) {
   if (props.unit === "metric") {
     return (
@@ -13,8 +15,10 @@ export default function OneDayForecast(props) {
               <FormatForecastDate time={props.forecastData.time} />
             </h5>
             <img
+              className="forecast-icon"
               src={props.forecastData.condition.icon_url}
               alt={props.forecastData.condition.icon}
+              width="54px"
             ></img>
             <div className="forecast-temps">
               <span className="forecast-temp-max">
@@ -40,6 +44,7 @@ export default function OneDayForecast(props) {
             <img
               src={props.forecastData.condition.icon_url}
               alt={props.forecastData.condition.icon}
+              width="54px"
             ></img>
             <div className="forecast-temps">
               <span className="forecast-temp-max">
