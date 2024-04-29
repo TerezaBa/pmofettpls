@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment-timezone";
 
+import getUtcOffset from "./FormatUtcOffset";
+
 export default function CurrentTime(props) {
   const [currentTime, setCurrentTime] = useState(props.time);
-  const [timer, setTimer] = useState(null);
+  const [offset, setOffset] = useState(null);
 
   const fetchDate = async (coords) => {
     const { latitude, longitude } = coords;
@@ -12,23 +14,26 @@ export default function CurrentTime(props) {
     const apiUrl = `https://api.timezonedb.com/v2.1/get-time-zone?key=${apiKey}&format=json&by=position&lat=${latitude}&lng=${longitude}`;
     const response = await axios.get(apiUrl);
     console.log(response.data);
+
+    const offsetSeconds = response.data.gmtOffset - response.data.dst * 3600;
+    setOffset(offsetSeconds);
     setCurrentTime(response.data.formatted);
   };
 
   useEffect(() => {
-    if (timer) clearTimeout(timer);
-    const newTimer = setTimeout(() => {
+    const timer = setTimeout(() => {
       fetchDate(props.coords);
-    }, 1000);
+    }, 100);
 
-    setTimer(newTimer);
-    return () => clearTimeout(newTimer);
+    return () => clearTimeout(timer);
   }, [props.coords]);
 
   return (
     <div>
       <h6>
-        {moment(currentTime).format("ddd Do MMMM, HH:mm") || "Loading time..."}
+        {moment(currentTime).format("ddd Do MMMM, HH:mm") +
+          " " +
+          getUtcOffset(offset) || "Loading time..."}
       </h6>
     </div>
   );
