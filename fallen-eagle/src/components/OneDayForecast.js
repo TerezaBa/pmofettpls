@@ -18,7 +18,6 @@ export default function OneDayForecast(props) {
               className="forecast-icon"
               src={props.forecastData.condition.icon_url}
               alt={props.forecastData.condition.icon}
-              width="54px"
             ></img>
             <div className="forecast-temps">
               <span className="forecast-temp-max">
@@ -44,7 +43,6 @@ export default function OneDayForecast(props) {
             <img
               src={props.forecastData.condition.icon_url}
               alt={props.forecastData.condition.icon}
-              width="54px"
             ></img>
             <div className="forecast-temps">
               <span className="forecast-temp-max">
