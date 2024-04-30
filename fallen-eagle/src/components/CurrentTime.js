@@ -3,6 +3,8 @@ import axios from "axios";
 import moment from "moment-timezone";
 import getUtcOffset from "../helpers/FormatUtcOffset";
 
+import "../styles/CurrentTime.css";
+
 export default function CurrentTime(props) {
   const [currentTime, setCurrentTime] = useState(props.time);
   const [offset, setOffset] = useState(null);
@@ -28,7 +30,7 @@ export default function CurrentTime(props) {
   }, [props.coords]);
 
   return (
-    <div>
+    <div className="CurrentTime">
       <h6>
         {moment(currentTime).format("ddd Do MMMM, HH:mm") +
           " " +

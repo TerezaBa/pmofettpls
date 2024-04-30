@@ -76,7 +76,7 @@ export default function DataSearch(props) {
           <div className="flex-item">
             <h1>{weatherData.city}</h1>
             <CurrentTime coords={weatherData.coords} />
-            <div className="text-capitalize">{weatherData.desc}</div>
+            <div className="weather-desc">{weatherData.desc}</div>
           </div>
           <div className="flex-item">
             <Temperature weather_info={weatherData.weather_info} />

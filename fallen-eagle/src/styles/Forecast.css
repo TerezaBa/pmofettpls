@@ -29,6 +29,11 @@
   font-weight: 500;
 }
 
+.Forecast .forecast-icon {
+  width: 54px;
+  height: 54px;
+}
+
 @media (max-width: 768px) {
   .Forecast .card-body {
     padding: 0;
@@ -61,5 +66,10 @@
 
   .Forecast .forecast-temp-max {
     font-weight: 500;
+  }
+
+  .Forecast .forecast-icon {
+    width: 20px;
+    height: 20px;
   }
 }

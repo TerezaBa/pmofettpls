@@ -24,6 +24,10 @@
   padding: 0.375rem 2.75rem;
 }
 
+.DataSearch .weather-desc {
+  text-transform: capitalize;
+}
+
 @media (max-width: 768px) {
   .DataSearch h1 {
     font-size: 24px;
@@ -31,10 +35,6 @@
 
   .DataSearch h4 {
     font-size: 12px;
-  }
-
-  .DataSearch ul {
-    font-size: 10px;
   }
 
   .DataSearch .btn {
@@ -49,5 +49,9 @@
 
   .DataSearch input {
     line-height: 1.2;
+  }
+
+  .DataSearch .weather-desc {
+    font-size: 8px;
   }
 }

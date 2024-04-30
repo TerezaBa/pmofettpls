@@ -23,12 +23,10 @@ export default function OneDayForecast(props) {
             <div className="forecast-temps">
               <span className="forecast-temp-max">
                 {getMetricTemp(props.forecastData.temperature.maximum)}°
-                {/* <Metric temp={props.forecastData.temperature.maximum} />° */}
               </span>
               {"   "}
               <span className="forecast-temp-min">
                 {getMetricTemp(props.forecastData.temperature.minimum)}°
-                {/* <Metric temp={props.forecastData.temperature.minimum} />° */}
               </span>
             </div>
           </div>
@@ -51,12 +49,10 @@ export default function OneDayForecast(props) {
             <div className="forecast-temps">
               <span className="forecast-temp-max">
                 {getImperialTemp(props.forecastData.temperature.maximum)}°
-                {/* <Imperial temp={props.forecastData.temperature.maximum} />° */}
               </span>
               {"   "}
               <span className="forecast-temp-min">
                 {getImperialTemp(props.forecastData.temperature.minimum)}°
-                {/* <Imperial temp={props.forecastData.temperature.minimum} />° */}
               </span>
             </div>
           </div>
