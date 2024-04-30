@@ -41,6 +41,7 @@ export default function OneDayForecast(props) {
               {formatDate(props.forecastData.time)}
             </h5>
             <img
+              className="forecast-icon"
               src={props.forecastData.condition.icon_url}
               alt={props.forecastData.condition.icon}
             ></img>
