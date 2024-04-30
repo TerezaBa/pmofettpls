@@ -4,7 +4,7 @@ import CurrentTime from "./CurrentTime";
 import Temperature from "./Temperature";
 import Forecast from "./Forecast";
 
-import "./styles/DataSearch.css";
+import "../styles/DataSearch.css";
 
 export default function DataSearch(props) {
   const [input, setInput] = useState("");

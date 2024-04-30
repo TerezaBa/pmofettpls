@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import DataSearch from "./DataSearch";
-import { UnitSwitchContext } from "./UnitSwitchContext";
+import DataSearch from "./components/DataSearch";
+import { UnitSwitchContext } from "./helpers/UnitSwitchContext";
 
 import "./styles/App.css";
 

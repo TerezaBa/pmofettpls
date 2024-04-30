@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment-timezone";
-
-import getUtcOffset from "./FormatUtcOffset";
+import getUtcOffset from "../helpers/FormatUtcOffset";
 
 export default function CurrentTime(props) {
   const [currentTime, setCurrentTime] = useState(props.time);

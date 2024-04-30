@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { UnitSwitchContext } from "./UnitSwitchContext";
-import getMetricTemp from "./Metric";
-import getImperialTemp from "./Imperial";
+import { UnitSwitchContext } from "../helpers/UnitSwitchContext";
+import getMetricTemp from "../helpers/Metric";
+import getImperialTemp from "../helpers/Imperial";
 
-import "./styles/Temperature.css";
+import "../styles/Temperature.css";
 
 export default function Temperature(props) {
   const { unit, setUnit } = useContext(UnitSwitchContext);
@@ -30,7 +30,6 @@ export default function Temperature(props) {
         <div className="item">
           <div className="temp-figure">
             {getMetricTemp(props.weather_info.metric)}
-            {/* <Metric temp={props.weather_info.metric} /> */}
           </div>
         </div>
         <div className="item item-4">
@@ -67,7 +66,6 @@ export default function Temperature(props) {
         <div className="item">
           <div className="temp-figure">
             {getImperialTemp(props.weather_info.metric)}
-            {/* <Imperial temp={props.weather_info.metric} /> */}
           </div>
         </div>
         <div className="item item-4">

@@ -1,9 +1,9 @@
 import React from "react";
-import getMetricTemp from "./Metric";
-import getImperialTemp from "./Imperial";
-import formatDate from "./FormatForecastDate";
+import getMetricTemp from "../helpers/Metric";
+import getImperialTemp from "../helpers/Imperial";
+import formatDate from "../helpers/FormatForecastDate";
 
-import "./styles/Forecast.css";
+import "../styles/Forecast.css";
 
 export default function OneDayForecast(props) {
   if (props.unit === "metric") {

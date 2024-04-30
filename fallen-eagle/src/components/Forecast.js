@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import OneDayForecast from "./OneDayForecast";
-import { UnitSwitchContext } from "./UnitSwitchContext";
+import { UnitSwitchContext } from "../helpers/UnitSwitchContext";
 
-import "./styles/Forecast.css";
+import "../styles/Forecast.css";
 
 export default function Forecast(props) {
   const [forecastData, setForecastData] = useState(null);
